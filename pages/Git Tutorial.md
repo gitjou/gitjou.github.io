@@ -1,1 +1,53 @@
--
+- 版控的歷史與版控的目的
+- 版控的兩大主流：中央式與分散式
+- 檔案衝突的發生與解決方法
+	- Lock 與 Merge
+- 建立 Git 環境
+	- 申請 GitHub 帳號
+	- 建立 SSH key
+	- 配置環境
+- 學習 Git
+	- 從無到有，建立版本庫（repository）與第一個提交（commit）
+		- `git init`
+		- `git add`
+		- `git commit`
+		- 三階段提交原理
+	- 追朔歷史
+		- `git show`
+		- `git log`
+	- 單人單工
+		- 檔案處理
+			- `git add`
+			- `git rm`
+			- `git mv`
+			- `git status`
+		- 提交檔案
+			- `git commit`
+		- 控制版本
+			- `git switch` 或 `git checkout`（舊）
+			- `git reset`
+			- `git tag`
+			- `HEAD` 的意義
+		- 竄改歷史
+			- `git rebase`
+	- 單人多工
+		- 介紹分支（branch）運作模式
+		- `git branch`
+		- `git merge`
+		- `git rebase`
+		- `git cherry-pick`
+		- 整合版本的策略差異
+		- 衝突案例與解決方法
+	- 多人多工
+		- 遠端版本庫與遠端分支的基本概念
+		- 管理遠端版本庫 - git remote
+		- 拉取版本至本地 - git pull
+		- 推送版本至遠端 - git push
+		- 複製整個版本庫 - git clone
+	- Git 工作流程
+		- Git Flow
+		- GitHub Flow
+	- 進階應用
+		- `git stash`
+		- `git clean` 的應用
+		- squash 概念與應用
