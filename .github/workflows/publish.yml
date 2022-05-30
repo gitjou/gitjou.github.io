@@ -1,0 +1,41 @@
+name: Publish
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Logseq Publish
+        uses: pengx17/logseq-publish@0.1.5
+        with:
+          dest: www
+
+      - name: Add .nojekyll file
+        run: touch www/.nojekyll
+
+      - name: Add Licence file
+        run: cp ./LICENSE www/
+
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }} 
+          branch: gh-pages
+          git-config-name: NineBird
+          git-config-email: no-reply@ninebird.io
+          single-commit: true
+          folder: www
+          clean: true
+          clean-exclude: |
+            .nojekyll
